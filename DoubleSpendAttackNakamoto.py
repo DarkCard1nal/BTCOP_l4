@@ -3,7 +3,7 @@ import math
 import matplotlib.pyplot as plt
 
 # args = [qStart, qCount, qStep, maxStart, maxStop]
-args = [0.1, 8, 0.05, 3, 6]
+args = [0.1, 8, 0.05, 3, 6, 1_000_000_000]
 
 
 def convert_argument(arg):
@@ -73,7 +73,7 @@ for q in qArr:
 	z = []
 	print(f"{q:<10} {round(1-q, 8):<10}", end='')
 	for max in maxArr:
-		z.append(attacker_success_probability(q, max))
+		z.append(attacker_success_probability(q, max, args[5]))
 		print(f" {z[-1]:<10}", end='')
 
 	print()
